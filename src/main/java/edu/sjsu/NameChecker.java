@@ -25,9 +25,11 @@ public class NameChecker {
         for (int i = 1; i < input.length(); i++)
         {
             ch = input.charAt(i);
+
             // check for consecutive hyphen
             if (ch == '-' && prevch == '-')
                 return false;
+            
             // check for single quote
             if (ch == '\'')
             {
@@ -35,6 +37,7 @@ public class NameChecker {
                     return false;
                 hasQuote = true;
             }
+            
             // check for invalid characters
             if (!Character.isLetter(ch) && ch != '\'' && ch != '-')
                 return false;
